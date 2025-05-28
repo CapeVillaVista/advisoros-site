@@ -2,7 +2,10 @@ import React from "react";
 
 export default function ComingSoon() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-cover bg-center text-white" style={{ backgroundImage: "url('/background-ai-theme.jpg')" }}>
+    <div
+      className="flex items-center justify-center min-h-screen bg-cover bg-center text-white"
+      style={{ backgroundImage: "url('/background-ai-theme.png')" }}
+    >
       <div className="text-center p-6 max-w-xl bg-black bg-opacity-70 rounded-lg">
         <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight">
           Advisor<span style={{ color: '#18b6d9' }}>OS</span>
