@@ -3,10 +3,10 @@ import React from "react";
 export default function ComingSoon() {
   return (
     <div
-      className="min-h-screen bg-cover bg-center"
+      className="min-h-screen bg-cover bg-center flex items-center justify-center"
       style={{ backgroundImage: "url('/background-ai-theme.png')" }}
     >
-      {/* Empty container since all visual content is now part of the background image */}
+      <div className="w-full h-full bg-transparent" />
     </div>
   );
 }
