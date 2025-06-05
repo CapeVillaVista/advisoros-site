@@ -130,13 +130,17 @@
         }
 
         .logo-text {
-            font-size: 32px;
-            font-weight: 700;
-            background: linear-gradient(135deg, #18b6d9 0%, #00B4D8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;  /* White for "Advisor" */
+}
+
+.logo-os {
+    background: linear-gradient(135deg, #18b6d9 0%, #00B4D8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
 
         /* Navigation */
         nav {
@@ -235,10 +239,51 @@
         .subtitle {
             font-size: 24px;
             font-weight: 300;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
             opacity: 0.8;
             animation: fadeInUp 1s ease-out 0.2s;
             animation-fill-mode: both;
+        }
+
+        /* Hero Buttons */
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease-out 0.3s;
+            animation-fill-mode: both;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 18px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #18b6d9 0%, #00B4D8 100%);
+            color: #fff;
+            border: 2px solid transparent;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(24, 182, 217, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #18b6d9;
+            border: 2px solid #18b6d9;
+        }
+        
+        .btn-secondary:hover {
+            background: #18b6d9;
+            color: #fff;
         }
 
         /* Email Capture Box */
@@ -434,6 +479,66 @@
             to { transform: rotate(360deg); }
         }
 
+        /* Footer */
+        footer {
+            background: #002e5d;
+            padding: 60px 0 30px;
+            color: #fff;
+            margin-top: 100px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .footer-brand h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+        }
+        
+        .footer-column h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #18b6d9;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #18b6d9;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             header {
@@ -488,6 +593,21 @@
 
             .tech-stack-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
             }
         }
     </style>
@@ -578,7 +698,7 @@
                 <line x1="58" y1="40" x2="66" y2="48" stroke="rgba(0,180,216,0.3)" stroke-width="1"/>
                 <line x1="58" y1="55" x2="66" y2="48" stroke="rgba(0,180,216,0.3)" stroke-width="1"/>
             </svg>
-            <span class="logo-text">AdvisorOS</span>
+            <span class="logo-text">Advisor<span class="logo-os">OS</span></span>
         </div>
         
         <nav id="navigation">
@@ -599,6 +719,12 @@
     <main class="main-content">
         <h1>AI-Powered Infrastructure<br>for Modern RIAs</h1>
         <p class="subtitle">Your tech stack, wrapped in AI. Built for individual advisors and enterprise RIAs.</p>
+        
+        <!-- Hero Buttons - CORRECTLY PLACED -->
+        <div class="hero-buttons">
+            <a href="#signup" class="btn btn-primary">Get Started</a>
+            <a href="https://calendly.com/your-link" class="btn btn-secondary">Schedule Demo</a>
+        </div>
         
         <div class="email-capture">
             <h2>Your Tech Stack, Wrapped in AI</h2>
@@ -641,6 +767,47 @@
             </div>
         </div>
     </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>Advisor<span style="color: #18b6d9;">OS</span></h3>
+                <p>AI Infrastructure for the Modern RIA</p>
+                <p style="font-size: 14px;">© 2025 AdvisorOS LLC. All rights reserved.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Product</h4>
+                <ul class="footer-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="/pricing.html">Pricing</a></li>
+                    <li><a href="/integrations.html">Integrations</a></li>
+                    <li><a href="/security.html">Security</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul class="footer-links">
+                    <li><a href="/support.html">Support</a></li>
+                    <li><a href="/docs.html">Documentation</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/webinars.html">Webinars</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="/privacy.html">Privacy Policy</a></li>
+                    <li><a href="/terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>AdvisorOS LLC | Troy, Michigan | getadvisoros.ai</p>
+        </div>
+    </footer>
 
     <script>
         // Particle generation
