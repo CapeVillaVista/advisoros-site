@@ -1,0 +1,20 @@
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+
+.logo-text {
+    font-size: 32px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #18b6d9 0%, #00B4D8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}

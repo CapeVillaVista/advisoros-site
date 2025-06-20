@@ -1,0 +1,6 @@
+Key Design Elements:
+
+Brand Colors: #18b6d9 (primary blue), #00B4D8 (secondary blue), #ffffff (white)
+Animation: 3-second pulse cycle with staggered timing
+Structure: 3-4-3-2 node architecture (input-hidden1-hidden2-output)
+Size: 80x80 viewBox, scales to 50x50px in header

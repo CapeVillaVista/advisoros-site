@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - AdvisorOS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #000;
+            color: #fff;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Background */
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(ellipse at center, #002e5d 0%, #000 70%);
+        }
+
+        /* Header */
+        header {
+            position: relative;
+            padding: 30px 60px;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-text {
+            font-size: 32px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .logo-os {
+            background: linear-gradient(135deg, #18b6d9 0%, #00B4D8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+        }
+
+        .pricing-container {
+            text-align: center;
+            max-width: 800px;
+            background: rgba(0, 46, 93, 0.3);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(24, 182, 217, 0.3);
+            border-radius: 20px;
+            padding: 60px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: rgba(24, 182, 217, 0.2);
+            border: 1px solid #18b6d9;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 30px;
+            color: #18b6d9;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff 0%, #18b6d9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .pricing-preview {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .price-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(24, 182, 217, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .price-card:hover {
+            transform: translateY(-5px);
+            border-color: #18b6d9;
+            box-shadow: 0 10px 30px rgba(24, 182, 217, 0.2);
+        }
+
+        .price-card h3 {
+            font-size: 24px;
+            color: #18b6d9;
+            margin-bottom: 20px;
+        }
+
+        .price-placeholder {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #18b6d9 0%, #00B4D8 100%);
+            color: #fff;
+            padding: 15px 40px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(24, 182, 217, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 46, 93, 0.5);
+            padding: 60px 0 30px;
+            color: #fff;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .footer-brand h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+        }
+        
+        .footer-column h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #18b6d9;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #18b6d9;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .pricing-preview {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-container {
+                padding: 40px 20px;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background -->
+    <div class="background-container"></div>
+
+    <!-- Header -->
+    <header>
+        <a href="/" class="logo">
+            <span class="logo-text">Advisor<span class="logo-os">OS</span></span>
+        </a>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="pricing-container">
+            <div class="status-badge">💎 Pricing Coming Soon</div>
+            <h1>Simple, Transparent Pricing</h1>
+            <p class="subtitle">
+                We're crafting pricing plans that scale with your practice. 
+                Whether you're a solo advisor or managing a large RIA, 
+                we'll have a plan that fits your needs.
+            </p>
+            
+            <div class="pricing-preview">
+                <div class="price-card">
+                    <h3>Solo Advisor</h3>
+                    <div class="price-placeholder">$--</div>
+                    <p>Perfect for individual advisors</p>
+                </div>
+                <div class="price-card">
+                    <h3>Team Practice</h3>
+                    <div class="price-placeholder">$--</div>
+                    <p>For growing RIA practices</p>
+                </div>
+                <div class="price-card">
+                    <h3>Enterprise</h3>
+                    <div class="price-placeholder">$--</div>
+                    <p>For large RIAs with multiple advisors</p>
+                </div>
+            </div>
+            
+            <a href="/" class="cta-button">Get Early Access for Special Launch Pricing</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>Advisor<span style="color: #18b6d9;">OS</span></h3>
+                <p>AI Infrastructure for the Modern RIA</p>
+                <p style="font-size: 14px;">© 2025 AdvisorOS LLC. All rights reserved.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Product</h4>
+                <ul class="footer-links">
+                    <li><a href="/about.html#features">Features</a></li>
+                    <li><a href="/pricing.html">Pricing</a></li>
+                    <li><a href="/integrations.html">Integrations</a></li>
+                    <li><a href="/security.html">Security</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul class="footer-links">
+                    <li><a href="/support.html">Support</a></li>
+                    <li><a href="/docs.html">Documentation</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/webinars.html">Webinars</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="/privacy.html">Privacy Policy</a></li>
+                    <li><a href="/terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>AdvisorOS LLC | Troy, Michigan | getadvisoros.ai</p>
+        </div>
+    </footer>
+</body>
+</html>

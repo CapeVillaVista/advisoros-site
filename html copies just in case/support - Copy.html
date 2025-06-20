@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - AdvisorOS | AI Infrastructure for the Modern RIA</title>
+    <meta name="description" content="Get help with AdvisorOS. Access documentation, FAQs, troubleshooting guides, and contact our support team.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background: #f8f9fa;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #002e5d 0%, #003366 100%);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        
+        .logo-os {
+            color: #18b6d9;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #18b6d9;
+        }
+        
+        /* Main Content */
+        main {
+            margin-top: 80px;
+            min-height: calc(100vh - 80px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #18b6d9 0%, #00B4D8 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Search Bar */
+        .search-section {
+            background: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .search-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .search-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #18b6d9;
+        }
+        
+        .search-btn {
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #18b6d9, #00B4D8);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .search-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(24,182,217,0.3);
+        }
+        
+        /* Support Categories */
+        .categories {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            color: #002e5d;
+            margin-bottom: 50px;
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .category-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        
+        .category-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        
+        .category-title {
+            font-size: 1.5em;
+            color: #002e5d;
+            margin-bottom: 10px;
+        }
+        
+        .category-description {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            background: #f8f9fa;
+            padding: 60px 20px;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .faq-question {
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #002e5d;
+            transition: background 0.3s;
+        }
+        
+        .faq-question:hover {
+            background: #f8f9fa;
+        }
+        
+        .faq-toggle {
+            font-size: 1.5em;
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 25px 20px;
+            max-height: 500px;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #002e5d 0%, #003366 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .contact-item {
+            text-align: center;
+        }
+        
+        .contact-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            color: #18b6d9;
+        }
+        
+        .contact-title {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info {
+            color: #ccc;
+            line-height: 1.6;
+        }
+        
+        .contact-info a {
+            color: #18b6d9;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Resources Section */
+        .resources-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        
+        .resource-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .resource-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        
+        .resource-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .resource-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #18b6d9, #00B4D8);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            color: white;
+        }
+        
+        .resource-title {
+            font-size: 1.3em;
+            color: #002e5d;
+        }
+        
+        .resource-links {
+            list-style: none;
+        }
+        
+        .resource-links li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .resource-links li:last-child {
+            border-bottom: none;
+        }
+        
+        .resource-links a {
+            color: #18b6d9;
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: color 0.3s;
+        }
+        
+        .resource-links a:hover {
+            color: #00B4D8;
+        }
+        
+        /* Footer */
+        footer {
+            background: #002e5d;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #18b6d9;
+        }
+        
+        .copyright {
+            color: #ccc;
+            font-size: 0.9em;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="/" class="logo">
+                <div class="logo-text">Advisor<span class="logo-os">OS</span></div>
+            </a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/features">Features</a>
+                <a href="/pricing">Pricing</a>
+                <a href="/support">Support</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>How Can We Help?</h1>
+            <p>Find answers, access documentation, and get support for AdvisorOS</p>
+        </section>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="Search for help articles, guides, or features...">
+                    <button class="search-btn">Search</button>
+                </div>
+                <p>Popular searches: API setup, Meeting AI, CRM integration, billing automation</p>
+            </div>
+        </section>
+
+        <!-- Support Categories -->
+        <section class="categories">
+            <h2 class="section-title">Browse Support Topics</h2>
+            <div class="category-grid">
+                <a href="#getting-started" class="category-card">
+                    <div class="category-icon">🚀</div>
+                    <h3 class="category-title">Getting Started</h3>
+                    <p class="category-description">Learn the basics of AdvisorOS, set up your account, and configure your first automation workflows.</p>
+                </a>
+                
+                <a href="#integrations" class="category-card">
+                    <div class="category-icon">🔗</div>
+                    <h3 class="category-title">Integrations</h3>
+                    <p class="category-description">Connect AdvisorOS with Zoom, Redtail CRM, Orion, and other tools in your tech stack.</p>
+                </a>
+                
+                <a href="#features" class="category-card">
+                    <div class="category-icon">⚙️</div>
+                    <h3 class="category-title">Features & Workflows</h3>
+                    <p class="category-description">Master Meeting AI, billing automation, GIPS compliance, and client touch point management.</p>
+                </a>
+                
+                <a href="#api" class="category-card">
+                    <div class="category-icon">👨‍💻</div>
+                    <h3 class="category-title">API Documentation</h3>
+                    <p class="category-description">Technical documentation for developers building custom integrations with AdvisorOS.</p>
+                </a>
+                
+                <a href="#security" class="category-card">
+                    <div class="category-icon">🔒</div>
+                    <h3 class="category-title">Security & Compliance</h3>
+                    <p class="category-description">Understand our security measures, data handling, and compliance features.</p>
+                </a>
+                
+                <a href="#troubleshooting" class="category-card">
+                    <div class="category-icon">🛠️</div>
+                    <h3 class="category-title">Troubleshooting</h3>
+                    <p class="category-description">Fix common issues and get your automations running smoothly.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section class="resources-section">
+            <h2 class="section-title">Quick Resources</h2>
+            <div class="resource-cards">
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <div class="resource-icon">📚</div>
+                        <h3 class="resource-title">Documentation</h3>
+                    </div>
+                    <ul class="resource-links">
+                        <li><a href="/docs/meeting-ai">→ Meeting AI Setup Guide</a></li>
+                        <li><a href="/docs/billing-automation">→ Quarterly Billing Automation</a></li>
+                        <li><a href="/docs/gips-monitoring">→ GIPS Composite Management</a></li>
+                        <li><a href="/docs/client-touchpoints">→ Client Touch Point Intelligence</a></li>
+                    </ul>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <div class="resource-icon">🎥</div>
+                        <h3 class="resource-title">Video Tutorials</h3>
+                    </div>
+                    <ul class="resource-links">
+                        <li><a href="/videos/getting-started">→ Getting Started (5 min)</a></li>
+                        <li><a href="/videos/zoom-integration">→ Zoom Integration Setup</a></li>
+                        <li><a href="/videos/crm-sync">→ CRM Synchronization</a></li>
+                        <li><a href="/videos/compliance-features">→ Compliance Features Overview</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="faq-container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How does AdvisorOS integrate with my existing CRM?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>AdvisorOS seamlessly integrates with major CRMs including Redtail, Wealthbox, Salesforce, and Practifi. Simply connect your CRM through our integrations page using OAuth authentication. Once connected, meeting notes, tasks, and client data sync automatically.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is my client data secure?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes. We use bank-level encryption (AES-256 at rest, TLS 1.3 in transit) and are SOC 2 Type II compliant (in progress). All data is stored in secure US-based data centers. We never use your client data to train AI models.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long are meeting recordings stored?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>By default, we retain meeting data for 5 years to meet SEC compliance requirements. You can configure custom retention policies based on your firm's needs. Data can be exported or deleted at any time through your dashboard.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I use AdvisorOS on mobile devices?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Our mobile app allows you to capture in-person meetings, review summaries, and manage tasks on the go. The app is available for both iOS and Android devices.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What happens if my internet connection drops during a meeting?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>AdvisorOS has built-in redundancy. For virtual meetings, as long as the meeting platform continues recording, we'll capture the full conversation. For in-person meetings using our mobile app, recordings are cached locally and uploaded once connection is restored.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="contact-container">
+                <h2 class="section-title">Still Need Help?</h2>
+                <p style="font-size: 1.2em; margin-bottom: 40px;">Our support team is here to assist you</p>
+                
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <div class="contact-icon">💬</div>
+                        <h3 class="contact-title">Live Chat</h3>
+                        <p class="contact-info">
+                            Available Monday-Friday<br>
+                            9:00 AM - 6:00 PM EST
+                        </p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <h3 class="contact-title">Email Support</h3>
+                        <p class="contact-info">
+                            <a href="mailto:support@getadvisoros.ai">support@getadvisoros.ai</a><br>
+                            Response within 24 hours
+                        </p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <h3 class="contact-title">Phone Support</h3>
+                        <p class="contact-info">
+                            Enterprise customers only<br>
+                            1-888-ADV-OSOS
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="/security">Security</a>
+                <a href="/status">System Status</a>
+            </div>
+            <p class="copyright">© 2025 AdvisorOS LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // Search functionality (placeholder)
+        document.querySelector('.search-btn').addEventListener('click', () => {
+            const query = document.querySelector('.search-input').value;
+            if (query) {
+                alert(`Searching for: ${query}\n\nSearch functionality will be implemented with backend integration.`);
+            }
+        });
+    </script>
+</body>
+</html>
